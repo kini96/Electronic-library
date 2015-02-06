@@ -1,0 +1,7 @@
+.navbar-right(ng-controller="LoginCtrl")
+	form.navbar-form(ng-hide="identity.isAuthenticated()")
+		input.form-control(type="text", placeholder="Username-admin", ng-model="user.username")
+		input.form-control(type="password", placeholder="Password-admin", ng-model="user.password")
+		button.btn.btn-primary(ng-click="login(user)") Admin Login
+
+	div (ng-show="identity.isAuthenticated()") {{ identity.currentUser.username }}
