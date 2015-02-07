@@ -17,6 +17,16 @@ app.factory('auth', function($http, $q, identity) {
 			});
 
 			return deferred.promise;
+		},
+		logout: function() {
+			var deferred = $q.defer();
+
+			$http.post('/logout').success(function() {
+					identity.currentUser = undefined;
+					deferred.resolve();
+			})
+
+			return deferred.promise;
 		}
 	}
 })
