@@ -6,6 +6,5 @@ app.config(function($routeProvider, $locationProvider){
 	$routeProvider
 		.when('/', {
 			templateUrl: '/partial/main/home',
-			controller: 'MainCtrl'
 		})
 });
